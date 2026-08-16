@@ -141,7 +141,7 @@ export default function Home() {
       <nav className="navbar">
         <div className="nav-container">
           <button className="logo" onClick={() => scrollTo("home")}>
-            SBS<span>.</span>
+            MD. Shefatullah Bin Sadik<span></span>
           </button>
 
           <div className={`nav-links ${menuOpen ? "open" : ""}`}>
@@ -235,16 +235,6 @@ export default function Home() {
               alt="Md. Shefatullah Bin Sadik"
               className="hero-photo"
             />
-
-            <div className="floating-card card-one">
-              <strong>10th</strong>
-              <span>Semester</span>
-            </div>
-
-            <div className="floating-card card-two">
-              <strong>NSUCEC</strong>
-              <span>Vice President</span>
-            </div>
           </div>
         </div>
 
