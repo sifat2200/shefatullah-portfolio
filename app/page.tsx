@@ -94,7 +94,7 @@ const leadership = [
   {
     period: "2021 – 2022",
     role: "Committee Member",
-    organization: "NSU Computer & Engineering Club",
+    organization: "Volunteer For Bangladesh",
     items: [],
   },
   {
@@ -522,7 +522,7 @@ export default function Home() {
 
             <p>
               <span>LOCATION</span>
-              Basundhara Residential Area, Dhaka
+              Bashundhara Residential Area, Dhaka
             </p>
           </div>
         </div>
