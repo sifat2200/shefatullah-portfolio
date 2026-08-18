@@ -512,7 +512,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://shorturl.at/dkqsU"
+              href="https://www.linkedin.com/in/md-shefatullah-bin-sadik-6711ba274?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
               rel="noreferrer"
             >
