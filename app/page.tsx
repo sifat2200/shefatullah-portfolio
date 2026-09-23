@@ -6,18 +6,87 @@ const navItems = [
   "Home",
   "About",
   "Skills",
+  "Projects",
   "Experience",
   "Leadership",
-  "Community",
   "Education",
   "Contact",
 ];
 
+const projects = [
+  {
+    number: "01",
+    title: "PCOS Detection & Suggestion System",
+    category: "AI / ML / NLP",
+    description:
+      "A research-oriented machine learning system exploring PCOS risk prediction, class-imbalance handling, NLP-based representations, LLM-assisted augmentation, model evaluation, and suggestion generation.",
+    technologies: [
+      "Python",
+      "Machine Learning",
+      "NLP",
+      "LLMs",
+      "Scikit-learn",
+      "PyTorch",
+      "Hugging Face",
+    ],
+    github:
+      "https://github.com/sifat2200/PCOS-Detection-and-Suggestion-System",
+  },
+  {
+    number: "02",
+    title: "MedHelp — AI Medical Chatbot",
+    category: "AI / NLP / LLM",
+    description:
+      "An AI-powered medical question-answering application using retrieval-based context and Llama 2, with LangChain, Pinecone and Flask.",
+    technologies: [
+      "Python",
+      "Llama 2",
+      "LangChain",
+      "Pinecone",
+      "Flask",
+      "NLP",
+    ],
+    github: "https://github.com/sifat2200/Med_Help_Chatbot",
+  },
+];
+
 const skills = [
-  { name: "C", level: 85 },
-  { name: "C++", level: 82 },
-  { name: "Java", level: 75 },
-  { name: "Python", level: 85 },
+  {
+    title: "Programming",
+    items: ["Python", "C", "C++", "Java"],
+  },
+  {
+    title: "AI & Machine Learning",
+    items: [
+      "Machine Learning",
+      "NLP",
+      "LLMs",
+      "Deep Learning",
+      "Data Analysis",
+    ],
+  },
+  {
+    title: "Frameworks & Tools",
+    items: [
+      "PyTorch",
+      "Scikit-learn",
+      "Hugging Face",
+      "LangChain",
+      "Flask",
+      "Git & GitHub",
+    ],
+  },
+  {
+    title: "Other",
+    items: [
+      "Computer Networks",
+      "SQL",
+      "Problem Solving",
+      "Teamwork",
+      "Communication",
+      "Project Management",
+    ],
+  },
 ];
 
 const experiences = [
@@ -91,64 +160,65 @@ const leadership = [
     organization: "NSU Computer & Engineering Club",
     items: ["NSUCEC Robotics Workshop 2024"],
   },
-  {
-    period: "2021 – 2022",
-    role: "Committee Member",
-    organization: "Volunteer For Bangladesh",
-    items: [],
-  },
-  {
-    period: "2019 – Present",
-    role: "President",
-    organization: "Hrid Organisation",
-    items: [],
-  },
 ];
 
-const community = [
-  "Australian Education Expo — 2023",
-  "North South University Convocation — 2023, 2024 & 2025",
-  "North South University Admission Test — 2023, 2024 & 2025",
-  "North South University Fresher Orientation — 2023, 2024 & 2025",
-  "NSU Bit Arena — 2022",
-  "NSU HERC — 2024",
-  "BD Clean Bangladesh",
-  "Volunteer for Bangladesh",
-  "Bangladesh Scouts",
-  "Participated in national Soccer Bot competitions",
+const education = [
+  {
+    year: "CURRENT",
+    degree: "B.Sc. in Computer Science & Engineering",
+    institution: "North South University, Dhaka",
+    detail: "Computer Science & Engineering",
+  },
+  {
+    year: "2020",
+    degree: "Higher Secondary Certificate",
+    institution: "Khulna Public College, Khulna",
+    detail: "GPA 5.00",
+  },
+  {
+    year: "2018",
+    degree: "Secondary School Certificate",
+    institution: "Govt. Laboratory High School, Khulna",
+    detail: "GPA 5.00",
+  },
 ];
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollTo = (id: string) => {
-    document.getElementById(id.toLowerCase())?.scrollIntoView({
+    document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
     });
+
     setMenuOpen(false);
   };
 
   return (
     <main>
-      {/* Background decoration */}
+      {/* Background */}
       <div className="background-effects">
-        <div className="glow glow-one"></div>
-        <div className="glow glow-two"></div>
-        <div className="glow glow-three"></div>
+        <div className="glow glow-one" />
+        <div className="glow glow-two" />
+        <div className="glow glow-three" />
       </div>
 
       {/* NAVBAR */}
       <nav className="navbar">
         <div className="nav-container">
-          <button className="logo" onClick={() => scrollTo("home")}>
-            MD. Shefatullah Bin Sadik<span></span>
+          <button
+            className="logo"
+            onClick={() => scrollTo("home")}
+            aria-label="Go to home"
+          >
+            SHEFATULLAH<span>.</span>
           </button>
 
           <div className={`nav-links ${menuOpen ? "open" : ""}`}>
             {navItems.map((item) => (
               <button
                 key={item}
-                onClick={() => scrollTo(item)}
+                onClick={() => scrollTo(item.toLowerCase())}
                 className="nav-link"
               >
                 {item}
@@ -171,13 +241,13 @@ export default function Home() {
         <div className="hero-content">
           <div className="hero-text">
             <div className="availability">
-              <span className="status-dot"></span>
-              Available for opportunities
+              <span className="status-dot" />
+              Open to learning & collaboration
             </div>
 
             <p className="eyebrow">
-              CSE Undergraduate <span>•</span> Developer{" "}
-              <span>•</span> ML Enthusiast
+              CSE Undergraduate <span>•</span> AI/ML Enthusiast{" "}
+              <span>•</span> Developer
             </p>
 
             <h1>
@@ -188,9 +258,8 @@ export default function Home() {
 
             <p className="hero-description">
               Computer Science & Engineering undergraduate at North South
-              University with experience in technology, event management,
-              academic content creation, student leadership and community
-              activities.
+              University with interests in Artificial Intelligence, Machine
+              Learning, NLP, Large Language Models and software development.
             </p>
 
             <div className="hero-buttons">
@@ -198,7 +267,7 @@ export default function Home() {
                 className="primary-button"
                 onClick={() => scrollTo("projects")}
               >
-                Explore My Journey
+                View My Projects
                 <span>↗</span>
               </button>
 
@@ -216,19 +285,25 @@ export default function Home() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/md-shefatullah-bin-sadik-6711ba274?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                href="https://www.linkedin.com/in/md-shefatullah-bin-sadik-6711ba274"
                 target="_blank"
                 rel="noreferrer"
               >
                 in LinkedIn
               </a>
 
-              <a href="tel:+8801610460095">☎ Call</a>
+              <a
+                href="https://github.com/sifat2200"
+                target="_blank"
+                rel="noreferrer"
+              >
+                ◇ GitHub
+              </a>
             </div>
           </div>
 
           <div className="hero-photo-wrapper">
-            <div className="photo-glow"></div>
+            <div className="photo-glow" />
 
             <img
               src="/profile.jpg"
@@ -239,7 +314,7 @@ export default function Home() {
         </div>
 
         <div className="scroll-indicator">
-          <span></span>
+          <span />
           Scroll to explore
         </div>
       </section>
@@ -248,40 +323,32 @@ export default function Home() {
       <section id="about" className="section">
         <div className="section-heading">
           <p className="section-label">01 — ABOUT ME</p>
-          <h2>Turning curiosity into <span>impact.</span></h2>
+          <h2>
+            Building skills,
+            <br />
+            <span>creating solutions.</span>
+          </h2>
         </div>
 
         <div className="about-grid">
           <div className="about-main glass-card">
             <p>
-              I am an enthusiastic Computer Science & Engineering undergraduate
-              at North South University. I enjoy exploring technology,
-              connecting with people, organizing meaningful activities and
-              transforming ideas into practical outcomes.
+              I am a Computer Science & Engineering undergraduate at North
+              South University with a strong interest in Artificial
+              Intelligence, Machine Learning, Natural Language Processing,
+              Large Language Models and software development.
             </p>
 
             <p>
-              My experience combines programming, networking, event management,
-              academic content creation, social media moderation and student
-              leadership.
+              I enjoy turning ideas into practical projects and exploring how
+              modern technologies can be applied to real-world problems.
             </p>
 
-            <div className="stats">
-              <div>
-                <strong>4+</strong>
-                <span>Programming Languages</span>
-              </div>
-
-              <div>
-                <strong>3+</strong>
-                <span>Professional Roles</span>
-              </div>
-
-              <div>
-                <strong>5+</strong>
-                <span>Leadership Roles</span>
-              </div>
-            </div>
+            <p>
+              Alongside technical work, I have developed experience in
+              leadership, teamwork, event management, administration,
+              communication and student-community activities.
+            </p>
           </div>
 
           <div className="about-side">
@@ -294,10 +361,10 @@ export default function Home() {
             </div>
 
             <div className="mini-card">
-              <span>💻</span>
+              <span>🤖</span>
               <div>
                 <strong>Technical Focus</strong>
-                <p>C, C++, Java, Python & Networking</p>
+                <p>AI/ML • NLP • LLMs • Software Development</p>
               </div>
             </div>
 
@@ -316,75 +383,91 @@ export default function Home() {
       <section id="skills" className="section">
         <div className="section-heading">
           <p className="section-label">02 — SKILLS</p>
-          <h2>Tools I use to <span>build.</span></h2>
+          <h2>
+            Technologies I
+            <br />
+            <span>work with.</span>
+          </h2>
         </div>
 
         <div className="skills-grid">
-          <div className="glass-card programming-card">
-            <p className="card-label">PROGRAMMING</p>
-
-            {skills.map((skill) => (
-              <div className="skill-row" key={skill.name}>
-                <div className="skill-title">
-                  <span>{skill.name}</span>
-                  <span>{skill.level}%</span>
-                </div>
-
-                <div className="skill-bar">
-                  <div style={{ width: `${skill.level}%` }}></div>
-                </div>
+          {skills.map((skill, index) => (
+            <div className="glass-card skill-card" key={skill.title}>
+              <div className="card-number">
+                {String(index + 1).padStart(2, "0")}
               </div>
-            ))}
-          </div>
 
-          <div className="glass-card">
-            <p className="card-label">NETWORKING</p>
+              <p className="card-label">{skill.title}</p>
 
-            <div className="certificate">
-              <span>01</span>
-              <div>
-                <h3>CCNA: Introduction to Networks</h3>
-                <p>Cisco Networking Academy</p>
+              <div className="skill-tags">
+                {skill.items.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
               </div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <div className="certificate">
-              <span>02</span>
-              <div>
-                <h3>CCNA: Switching, Routing and Wireless Essentials</h3>
-                <p>Cisco Networking Academy</p>
+      {/* PROJECTS */}
+      <section id="projects" className="section">
+        <div className="section-heading">
+          <p className="section-label">03 — FEATURED PROJECTS</p>
+          <h2>
+            Turning ideas into
+            <br />
+            <span>working projects.</span>
+          </h2>
+        </div>
+
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <article className="project-card glass-card" key={project.number}>
+              <div className="project-top">
+                <span className="project-number">{project.number}</span>
+                <span className="project-category">
+                  {project.category}
+                </span>
               </div>
-            </div>
-          </div>
 
-          <div className="glass-card competencies">
-            <p className="card-label">CORE COMPETENCIES</p>
+              <h3>{project.title}</h3>
 
-            {[
-              "Critical Thinking",
-              "Teamwork",
-              "Communication",
-              "Project Management",
-              "Event Planning",
-              "Decision Making",
-            ].map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
+              <p>{project.description}</p>
+
+              <div className="project-tech">
+                {project.technologies.map((technology) => (
+                  <span key={technology}>{technology}</span>
+                ))}
+              </div>
+
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="project-link"
+              >
+                View on GitHub <span>↗</span>
+              </a>
+            </article>
+          ))}
         </div>
       </section>
 
       {/* EXPERIENCE */}
       <section id="experience" className="section">
         <div className="section-heading">
-          <p className="section-label">03 — EXPERIENCE</p>
-          <h2>Where I've <span>worked.</span></h2>
+          <p className="section-label">04 — EXPERIENCE</p>
+          <h2>
+            Where I have
+            <br />
+            <span>worked.</span>
+          </h2>
         </div>
 
         <div className="timeline">
           {experiences.map((experience, index) => (
             <article className="timeline-item" key={index}>
-              <div className="timeline-marker"></div>
+              <div className="timeline-marker" />
 
               <div className="timeline-content glass-card">
                 <div className="timeline-date">{experience.year}</div>
@@ -406,16 +489,25 @@ export default function Home() {
       {/* LEADERSHIP */}
       <section id="leadership" className="section">
         <div className="section-heading">
-          <p className="section-label">04 — LEADERSHIP</p>
-          <h2>Leading, organizing & <span>creating.</span></h2>
+          <p className="section-label">05 — LEADERSHIP</p>
+          <h2>
+            Leading, organizing
+            <br />
+            & <span>creating.</span>
+          </h2>
         </div>
 
         <div className="leadership-grid">
           {leadership.map((item, index) => (
-            <article className="leadership-card glass-card" key={index}>
+            <article
+              className="leadership-card glass-card"
+              key={`${item.role}-${item.period}`}
+            >
               <div className="leadership-top">
                 <span className="period">{item.period}</span>
-                <span className="number">0{index + 1}</span>
+                <span className="number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
               </div>
 
               <h3>{item.role}</h3>
@@ -433,52 +525,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* COMMUNITY */}
-      <section id="community" className="section">
-        <div className="section-heading">
-          <p className="section-label">05 — COMMUNITY</p>
-          <h2>Beyond the <span>classroom.</span></h2>
-        </div>
-
-        <div className="community-grid">
-          {community.map((item, index) => (
-            <div className="community-item glass-card" key={item}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <p>{item}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* EDUCATION */}
       <section id="education" className="section">
         <div className="section-heading">
           <p className="section-label">06 — EDUCATION</p>
-          <h2>My academic <span>journey.</span></h2>
+          <h2>
+            My academic
+            <br />
+            <span>journey.</span>
+          </h2>
         </div>
 
         <div className="education-grid">
-          <div className="education-card glass-card featured">
-            <span className="education-year">CURRENT</span>
-            <h3>B.Sc. in Computer Science & Engineering</h3>
-            <h4>North South University, Dhaka</h4>
-            <p>Major: Computer Science & Engineering</p>
-            <strong>10th Semester</strong>
-          </div>
+          {education.map((item) => (
+            <div
+              className="education-card glass-card"
+              key={`${item.degree}-${item.year}`}
+            >
+              <span className="education-year">{item.year}</span>
 
-          <div className="education-card glass-card">
-            <span className="education-year">2020</span>
-            <h3>Higher Secondary Certificate</h3>
-            <h4>Khulna Public College, Khulna</h4>
-            <strong>GPA 5.00</strong>
-          </div>
+              <h3>{item.degree}</h3>
 
-          <div className="education-card glass-card">
-            <span className="education-year">2018</span>
-            <h3>Secondary School Certificate</h3>
-            <h4>Govt. Laboratory High School, Khulna</h4>
-            <strong>GPA 5.00</strong>
-          </div>
+              <h4>{item.institution}</h4>
+
+              <p>{item.detail}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -489,14 +561,14 @@ export default function Home() {
             <p className="section-label">07 — CONTACT</p>
 
             <h2>
-              Let's build something
+              Let&apos;s build
               <br />
-              <span>meaningful.</span>
+              something <span>meaningful.</span>
             </h2>
 
             <p className="contact-description">
-              Whether it is technology, event management, collaboration or a
-              new opportunity, feel free to reach out.
+              I&apos;m open to learning opportunities, collaboration,
+              research, internships and meaningful technology projects.
             </p>
           </div>
 
@@ -512,7 +584,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/md-shefatullah-bin-sadik-6711ba274?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              href="https://www.linkedin.com/in/md-shefatullah-bin-sadik-6711ba274"
               target="_blank"
               rel="noreferrer"
             >
@@ -520,10 +592,14 @@ export default function Home() {
               View LinkedIn Profile ↗
             </a>
 
-            <p>
-              <span>LOCATION</span>
-              Bashundhara Residential Area, Dhaka
-            </p>
+            <a
+              href="https://github.com/sifat2200"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>GITHUB</span>
+              View GitHub Profile ↗
+            </a>
           </div>
         </div>
 
@@ -541,8 +617,10 @@ export default function Home() {
       {/* FOOTER */}
       <footer>
         <div>
-          <strong>Md. Shefatullah Bin Sadik<span>.</span></strong>
-          <p>Md. Shefatullah Bin Sadik</p>
+          <strong>
+            Md. Shefatullah Bin Sadik<span>.</span>
+          </strong>
+          <p>CSE Undergraduate • AI/ML • NLP • LLMs</p>
         </div>
 
         <p>© {new Date().getFullYear()} — Built with Next.js</p>
