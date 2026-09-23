@@ -3,30 +3,36 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Md. Shefatullah Bin Sadik | AI/ML & Software Developer",
+    default:
+      "Md. Shefatullah Bin Sadik | CSE Undergraduate • AI/ML • Software Development",
     template: "%s | Md. Shefatullah Bin Sadik",
   },
 
   description:
-    "Portfolio of Md. Shefatullah Bin Sadik, a Computer Science and Engineering undergraduate at North South University focused on AI, Machine Learning, NLP, LLMs, and software development.",
+    "Portfolio of Md. Shefatullah Bin Sadik, a Computer Science and Engineering undergraduate at North South University interested in AI, Machine Learning, NLP, LLMs and software development.",
 
   keywords: [
     "Md. Shefatullah Bin Sadik",
     "Shefatullah Bin Sadik",
     "Shefatullah",
     "CSE Undergraduate",
+    "Computer Science",
     "North South University",
     "NSU",
     "Artificial Intelligence",
     "Machine Learning",
-    "AI/ML",
+    "AI ML",
     "Natural Language Processing",
     "NLP",
     "Large Language Models",
     "LLM",
+    "Generative AI",
     "Software Development",
     "Python",
+    "C++",
+    "Java",
     "Portfolio",
+    "Bangladesh",
   ],
 
   authors: [
@@ -38,23 +44,41 @@ export const metadata: Metadata = {
 
   creator: "Md. Shefatullah Bin Sadik",
 
-  metadataBase: new URL("https://shefatullah-portfolio.vercel.app"),
+  publisher: "Md. Shefatullah Bin Sadik",
 
   openGraph: {
-    title: "Md. Shefatullah Bin Sadik | AI/ML & Software Developer",
+    title:
+      "Md. Shefatullah Bin Sadik | CSE Undergraduate • AI/ML • Software Development",
+
     description:
-      "CSE undergraduate at North South University focused on AI/ML, NLP, LLMs, and software development.",
+      "CSE undergraduate at North South University interested in AI/ML, NLP, LLMs, software development, leadership and technology-driven projects.",
+
     type: "website",
+
     locale: "en_US",
+
     siteName: "Md. Shefatullah Bin Sadik — Portfolio",
-    url: "https://shefatullah-portfolio.vercel.app",
+
+    images: [
+      {
+        url: "/profile.jpg",
+        width: 800,
+        height: 800,
+        alt: "Md. Shefatullah Bin Sadik",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Md. Shefatullah Bin Sadik | AI/ML & Software Developer",
+
+    title:
+      "Md. Shefatullah Bin Sadik | CSE Undergraduate • AI/ML",
+
     description:
-      "CSE undergraduate focused on AI/ML, NLP, LLMs, and software development.",
+      "Portfolio of Md. Shefatullah Bin Sadik — CSE undergraduate interested in AI/ML, NLP, LLMs and software development.",
+
+    images: ["/profile.jpg"],
   },
 
   robots: {
